@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: cafe-menu
+  labels:
+    app: cafe-menu
+spec:
+  type: ClusterIP
+  selector:
+    app: cafe-menu
+  ports:
+    - port: 80
+      targetPort: 8080

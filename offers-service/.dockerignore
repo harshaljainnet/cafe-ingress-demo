@@ -1,0 +1,6 @@
+bin/
+obj/
+k8s/
+.vs/
+Dockerfile
+.dockerignore

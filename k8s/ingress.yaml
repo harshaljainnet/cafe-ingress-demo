@@ -1,0 +1,30 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: cafe-ingress
+spec:
+  ingressClassName: nginx
+  rules:
+    - http:
+        paths:
+          - path: /menu
+            pathType: Prefix
+            backend:
+              service:
+                name: cafe-menu
+                port:
+                  number: 80
+          - path: /offers
+            pathType: Prefix
+            backend:
+              service:
+                name: cafe-offers
+                port:
+                  number: 80
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: cafe-ui
+                port:
+                  number: 80
